@@ -66,6 +66,9 @@
                 <img class="m-r-small" src="img/contract.svg" alt="Icono de contrato">
                 Entrega inmediata.
             </p>
+            <p class="flex-end">
+                <button onclick="openModal()">Ver Imagenes</button>
+            </p>
         </div>
         <div class="col-50"></div>
     </div>
@@ -121,5 +124,15 @@
             <p class="copyright m-t">&copy; Imperial Real State All rights reserved</p>
         </div>
     </footer>
+    <div class="overlay"> </div> <!--esta clase es para ver una capa transparente-->
+    <div class="carousel">
+        <div class="slide">
+            <img src="img/thumb2.jpg" alt="">
+        </div>
+        <div class="x-modal" onclick="closeModal()">
+            <img src="img/x.svg" alt="">
+        </div>
+    </div>
+   <script src="js/carousel.js"></script>
 </body>
 </html>
