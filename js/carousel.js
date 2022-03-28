@@ -51,4 +51,13 @@ function updateArrowState(e) {
     } else {
         rightArrow.style.display = 'flex';
     }
+
+    rightArrow.style.pointerEvents = 'none';/*permite o no utilizar el elemento como detector de eventos */
+    leftArrow.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+
+        rightArrow.style.pointerEvents = 'auto';/* cuando pasen los 900ms cambian la propiede events a "auto" (valor por defecto) */
+        leftArrow.style.pointerEvents = 'auto';
+    },900);
 }

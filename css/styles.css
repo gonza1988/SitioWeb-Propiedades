@@ -700,6 +700,7 @@ footer .copyright {
     top: 0;
     left: 0;
     width: 100%;
+    transition: 900ms all ease-in-out;
 }
 
 /*la "img" no lleva punto "." porque ya es un elemento*/
