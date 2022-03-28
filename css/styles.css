@@ -681,7 +681,6 @@ footer .copyright {
     top: 5vh; /*para darle margen sobre el "overlay" */
     left: 5%;
     width: 90%; /*para que nos quede con el 5 % anterior */
-    height: 90vh;
     background-color: white;
     z-index: 100;
     overflow: hidden; /*para que lo que no quepa, se oculte */

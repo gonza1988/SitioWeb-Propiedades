@@ -1,11 +1,23 @@
 let overlay = document.querySelector('.overlay');
 let carousel = document.querySelector('.carousel');
 let slides = document.querySelectorAll('.carousel .slide');
+let images = document.querySelectorAll('.carousel .slide img');
 let rightArrow = document.querySelector('.right-arrow'); /*lleva punto por ser una clase Css*/
 let leftArrow = document.querySelector('.left-arrow');
 let counter = 0;
 
 function loadSlides(){
+
+    carousel.style.height = '90vh'; /*para que sea la máxima altura del carrousel */
+    let heightCarousel = carousel.offsetHeight; /*Obtenemos la altura original de la imagen */
+
+    for(i=0; i < images.length; i++){
+        if(images[i].offsetHeight < heightCarousel) { /*si la imagen que iteramos,su altura,es menor que la del carrousel*/
+            heightCarousel = images[i].offsetHeight; /*esa altura del carousel pasara a ser la de la imagen (al finalizar el recorrido por esas imagenes,logramos que la imagen sea la menor del carousel en tamaño)*/
+        }
+    }
+
+    carousel.style.height = heightCarousel + 'px'; /*la altura del carouseal sea igual a la imagen mas pequeña de la lista de imagenes */
 
     for (i=0; i < slides.length; i++) {
         slides[i].style.left = carousel.offsetWidth * -i + 'px'; /*obtenemos el ancho de la imagen que dependiendo del dispositivo puede variar y lo desplazamos a la izquiera al multiplicar por -1 y para pasarselo a "left" le concatenamos 'px' para que lo entienda y sean pixeles*/
