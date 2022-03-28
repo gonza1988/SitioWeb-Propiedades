@@ -721,3 +721,19 @@ footer .copyright {
     justify-content:center;
     align-items: center;
 }
+
+.left-arrow {
+    position: absolute;
+    top: 50%; /*mitad de la altura del elemento */
+    left: 15px; /*a 15 pixeles del borde */
+    transform: translateY(-50%); /*metodo para centrar */
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex; /*centrar imagen de flecha */
+    justify-content:center;
+    align-items: center;
+    display: none;
+}

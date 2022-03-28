@@ -1,6 +1,9 @@
 let overlay = document.querySelector('.overlay');
 let carousel = document.querySelector('.carousel');
 let slides = document.querySelectorAll('.carousel .slide');
+let rightArrow = document.querySelector('.right-arrow'); /*lleva punto por ser una clase Css*/
+let leftArrow = document.querySelector('.left-arrow');
+let counter = 0;
 
 function loadSlides(){
 
@@ -22,8 +25,30 @@ function closeModal() {
 }
 
 function nextSlide() {
-
+    updateArrowState(1);
     for (i=0; i < slides.length; i++) {
         slides[i].style.left = slides[i].offsetLeft + carousel.offsetWidth + 'px'; /*devuelve un valor con la posicion left de ese elemento */
+    }
+}
+
+function prevSlide() {
+    updateArrowState(-1);
+    for (i=0; i < slides.length; i++) {
+        slides[i].style.left = slides[i].offsetLeft - carousel.offsetWidth + 'px'; /*devuelve un valor con la posicion left de ese elemento */
+    }
+}
+
+function updateArrowState(e) {
+    counter += e;
+    if(counter !== 0) {
+        leftArrow.style.display = 'flex';
+    } else {
+        leftArrow.style.display = 'none';
+    }
+
+    if(counter === slides.length -1) {
+        rightArrow.style.display = 'none';
+    } else {
+        rightArrow.style.display = 'flex';
     }
 }
